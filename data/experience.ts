@@ -1,5 +1,15 @@
-export const experiences = [
+export type Experience = {
+  id: string;
+  role: string;
+  company: string;
+  location: string;
+  timeline: string;
+  achievements: string[];
+};
+
+export const experiences: Experience[] = [
   {
+    id: "poplify-intern",
     role: "Generative AI Software Engineer Intern",
     company: "Poplify Pvt. Ltd.",
     location: "Panchkula, Haryana, India",
@@ -10,6 +20,7 @@ export const experiences = [
     ]
   },
   {
+    id: "coursera-ambassador",
     role: "Campus Ambassador",
     company: "Coursera, Chandigarh University",
     location: "Chandigarh, India",
@@ -20,6 +31,7 @@ export const experiences = [
     ]
   },
   {
+    id: "cdac-intern",
     role: "AI/ML Intern",
     company: "Centre for Development of Advanced Computing (C-DAC)",
     location: "Mohali, Punjab, India",

@@ -7,7 +7,7 @@ import { FaAward } from "react-icons/fa";
 
 export function Certifications() {
   return (
-    <section className="py-24 px-4 relative overflow-hidden">
+    <section id="certifications" className="py-24 px-4 relative overflow-hidden">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-5xl font-space font-bold tracking-tight text-center mb-16">
           Certifications & Achievements
@@ -16,7 +16,7 @@ export function Certifications() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {certifications.map((cert, idx) => (
             <motion.div
-              key={idx}
+              key={cert.id}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
