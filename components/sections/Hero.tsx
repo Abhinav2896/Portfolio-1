@@ -9,7 +9,7 @@ import { FaPhoneAlt, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
       <motion.div 
         variants={staggerContainer}
         initial="hidden"
@@ -51,11 +51,12 @@ export function Hero() {
 }
 
 function SocialLink({ href, icon, label }: { href: string, icon: React.ReactNode, label: string }) {
+  const isExternal = href.startsWith("http");
   return (
-    <a 
-      href={href} 
-      target="_blank" 
-      rel="noopener noreferrer"
+    <a
+      href={href}
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       aria-label={label}
       className="text-foreground/60 hover:text-accent-cyan transition-colors duration-300 transform hover:scale-110"
     >

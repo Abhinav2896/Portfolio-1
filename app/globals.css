@@ -43,3 +43,15 @@ body {
   -webkit-text-fill-color: transparent;
   background-image: linear-gradient(135deg, #06B6D4 0%, #8B5CF6 100%);
 }
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
