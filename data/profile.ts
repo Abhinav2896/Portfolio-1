@@ -1,6 +1,6 @@
 export const profile = {
-  name: "Nikhil",
-  fullName: "Nikhil", // Placeholder to be replaced later
+  name: "Abhinav",
+  fullName: "Abhinav S. Bisht",
   title: "Generative AI Software Engineer",
   tagline: "Building scalable, production-ready intelligent applications.",
   email: "abhinavbish202@gmail.com",
