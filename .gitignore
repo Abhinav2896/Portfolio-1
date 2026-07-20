@@ -1,0 +1,96 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+/build
+next-env.d.ts
+
+# Production
+/dist
+
+# Misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Local env files
+.env
+.env*.local
+.env.development
+.env.production
+.env.test
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Desktop.ini
+ehthumbs.db
+ehthumbs_view.db
+.Trashes
+$RECYCLE.BIN/
+
+# Logs
+logs
+*.log
+
+# Cache
+.cache/
+.parcel-cache/
+.turbo/
+.eslintcache
+
+# Optional npm/yarn integrity files
+.npm/
+.yarn-integrity
+
+# Optional tooling
+.eslintcache
+.stylelintcache
+
+# Build artifacts
+/dist/
+/tmp/
+/temp/
+
+# Vite (if used)
+/.vite/
+
+# Bun
+bun.lockb
+
+# pnpm
+.pnpm-store/
+
+# Local Netlify/Vercel folder
+.netlify/
