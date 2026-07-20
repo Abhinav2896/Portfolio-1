@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { featuredProjects, compactProjects } from "@/data/projects";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { SiGithub, SiLinkfire } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 export function Projects() {
