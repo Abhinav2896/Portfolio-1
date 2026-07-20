@@ -9,19 +9,34 @@ export function CursorGlow() {
   const cursorY = useSpring(0, { stiffness: 50, damping: 20 });
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsDesktop(window.matchMedia("(pointer: fine)").matches);
-      
-      const moveCursor = (e: MouseEvent) => {
-        cursorX.set(e.clientX - 200); // 400px width / 2
-        cursorY.set(e.clientY - 200); // 400px height / 2
-      };
-      
-      window.addEventListener("mousemove", moveCursor);
-      return () => {
-        window.removeEventListener("mousemove", moveCursor);
-      };
-    }
+    if (typeof window === "undefined") return;
+
+    const mediaQuery = window.matchMedia("(pointer: fine)");
+    setIsDesktop(mediaQuery.matches);
+
+    let rafId: number | null = null;
+    let latestX = 0;
+    let latestY = 0;
+
+    const updateSpring = () => {
+      cursorX.set(latestX - 200); // 400px width / 2
+      cursorY.set(latestY - 200); // 400px height / 2
+      rafId = null;
+    };
+
+    const moveCursor = (e: MouseEvent) => {
+      latestX = e.clientX;
+      latestY = e.clientY;
+      if (rafId === null) {
+        rafId = window.requestAnimationFrame(updateSpring);
+      }
+    };
+
+    window.addEventListener("mousemove", moveCursor, { passive: true });
+    return () => {
+      window.removeEventListener("mousemove", moveCursor);
+      if (rafId !== null) window.cancelAnimationFrame(rafId);
+    };
   }, [cursorX, cursorY]);
 
   if (!isDesktop) return null;
