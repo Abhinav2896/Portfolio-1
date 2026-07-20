@@ -8,9 +8,62 @@ import { AuroraCanvas } from "@/components/ui/AuroraCanvas";
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space" });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
+const SITE_URL = "https://abhinav2896.github.io/Portfolio-1";
+const SITE_DESCRIPTION =
+  "Portfolio of Abhinav — Generative AI Software Engineer specializing in LLMs, Machine Learning, and Intelligent Systems.";
+
 export const metadata: Metadata = {
-  title: "Nikhil | Generative AI Software Engineer",
-  description: "Portfolio of Nikhil, a Generative AI Software Engineer specializing in LLMs, Machine Learning, and Intelligent Systems.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Abhinav | Generative AI Software Engineer",
+    template: "%s | Abhinav",
+  },
+  description: SITE_DESCRIPTION,
+  keywords: [
+    "Abhinav",
+    "Generative AI",
+    "Software Engineer",
+    "LLM",
+    "Machine Learning",
+    "RAG",
+    "Next.js",
+    "Portfolio",
+  ],
+  authors: [{ name: "Abhinav", url: "https://github.com/Abhinav2896" }],
+  creator: "Abhinav",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: SITE_URL,
+    title: "Abhinav | Generative AI Software Engineer",
+    description: SITE_DESCRIPTION,
+    siteName: "Abhinav Portfolio",
+    images: [
+      {
+        url: "/headshot.png",
+        width: 1200,
+        height: 630,
+        alt: "Abhinav — Generative AI Software Engineer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Abhinav | Generative AI Software Engineer",
+    description: SITE_DESCRIPTION,
+    images: ["/headshot.png"],
+    creator: "@Abhinav2896",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
