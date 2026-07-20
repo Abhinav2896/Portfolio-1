@@ -7,6 +7,7 @@ import { SiGithub } from "react-icons/si";
 
 export function GitHubSection() {
   const totalBytes = githubStats.languages.reduce((acc, curr) => acc + curr.bytes, 0);
+  const safeTotal = totalBytes > 0 ? totalBytes : 1;
 
   return (
     <section className="py-12 px-4 relative">
@@ -34,12 +35,12 @@ export function GitHubSection() {
                   <motion.div
                     key={idx}
                     initial={{ width: 0 }}
-                    whileInView={{ width: `${(lang.bytes / totalBytes) * 100}%` }}
+                    whileInView={{ width: `${(lang.bytes / safeTotal) * 100}%` }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, delay: idx * 0.1, ease: "easeOut" }}
                     className="h-full hover:opacity-80 transition-opacity cursor-pointer"
                     style={{ backgroundColor: lang.color }}
-                    title={`${lang.name}: ${Math.round((lang.bytes / totalBytes) * 100)}%`}
+                    title={`${lang.name}: ${Math.round((lang.bytes / safeTotal) * 100)}%`}
                   />
                 ))}
               </div>
